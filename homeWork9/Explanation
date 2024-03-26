@@ -1,0 +1,28 @@
+From the homework: The lowest common ancestor is defined between two nodes p and q 
+                   as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).
+
+Noteworthy constraints: 
+1. values are unique.
+2. p and q must exist in the BST
+
+I designed an algorithmic method lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) that returns the lowest common ancestor.
+
+The base case for the algorithm is that for a root node, r: if p <= r <= q or if q <= r <= q, then r is the lowest common ancestor.
+
+This is because when p < r < q, then p is in the left subtree and q is on the right subtree, as stated by the properties of a BST.
+Alternatively, q < r < p, but both nodes still end up on opposite sides of the tree. Because they are on opposite ends of the tree, r is the
+only common vertex in both subtrees, therefore r is the lowest common ancestor for p and q.
+
+Otherwise, if r = p or q, then p or q (whichever is at a higher level in the tree) is the lowest common ancestor, since nodes can be ancestors of themselves.
+
+The two cases when p, q < r or when p, q > r are symmetric, so the logic and method are the exact same on both sides of tree.
+
+Consider the case that p, q < r: then both p and q are in the left subtree.
+
+Then, the method is called recursively on the left subtree, with the root's left child being the root of the left subtree.
+Afterwards, p and q are now compared to this new root, say, r1.
+
+If p <= r1 <= q or q <= r1 <= p, then the base case has been reached and r1 is the lowest common ancestor.
+
+If not, then we continue to recurse until we are guaranteed to reach the base case. This is because, since T contains unique variables, there will be a vertex, v,
+such that v is between p and q. 

@@ -1,1 +1,11 @@
+The goal of this assignment is to traverse a tree and print all nodes in the tree by level. The way I tackled this was by using a
+breadth-first search. In order to accomplish this, I needed to use a helper method to keep track of the levels of the tree and to recursively
+add to a list. 
+
+I realized that the homework suggested stacks and queues, but my mind immediately went to recursion. 
+
+In the helper method, I check to see if a node is null. That means we have reached the end of a path and we can terminate. Otherwise, the goal
+is to fill the list with sublists containing nodes per level. We do that by checking to see if an array list has been created for a given level.
+If not, then we initialize an array list and for every node in that level, they get inserted into the array, before recursively being called on the left and
+right child of the left node. This continues until the nodes are null, after which the original method returns the list filled with the list of nodes for each level.
 

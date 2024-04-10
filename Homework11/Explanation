@@ -1,1 +1,6 @@
-Enter file contents here.
+The goal of the assignment is to flood fill cardinal pixels that connect to and match the initial position's value.
+The way that I went about this was using recursion to traverse multiple directions and using a temporary variable.
+Using multiple if statements, adjacent values were checked to see if they matched the initial position's values. If
+they did, then the method would recurse in that next position. Otherwise, nothing would happen. In order to properly
+move forward, though, a variable is needed to hold the initial value of the position. That way, the position's value can
+be changed into the color value and still compare adjacent positions.

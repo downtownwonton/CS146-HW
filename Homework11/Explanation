@@ -4,3 +4,6 @@ Using multiple if statements, adjacent values were checked to see if they matche
 they did, then the method would recurse in that next position. Otherwise, nothing would happen. In order to properly
 move forward, though, a variable is needed to hold the initial value of the position. That way, the position's value can
 be changed into the color value and still compare adjacent positions.
+
+Note that the random array generator will sometimes fail because of the RNG. This would only be if the index is out of
+bounds for when the array's column or row length is 0.

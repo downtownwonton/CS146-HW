@@ -1,1 +1,8 @@
+The goal of this problem is to return the minimum total cost to supply water to all houses. The way I went about tackling
+this problem is by using Prim's algorithm to create a minimum spanning tree. The big problem with this is that the problem has a chance of
+providing disconnected components of a graph. In the example output provided, one possibility of the right answer is that both houses get 
+indivudual wells, so that both houses remain disconnected from each other.
 
+The way I dealt with this was that I put the pipes array into an adjacency matrix, and then afterwards, I used a virtual node to connect to all
+houses, where each edge connecting to the vertex and the virtual node corresponds to each entry in the wells array. This is so that I can create a
+connected graph to apply Prim's algorithm.
